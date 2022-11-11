@@ -1,0 +1,38 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: ssh-pipeline
+        uses: cross-the-world/ssh-pipeline@v1.2.0
+        with:
+          # ssh remote host
+          host: 38.242.150.128
+          # ssh remote port
+          port: 22
+          # ssh remote user
+          user: admin
+          # content of ssh private key. ex raw content of ~/.ssh/id_rsa
+          key: 
+          # ssh remote password
+          pass: D6:D@UApc)
+          # connection timeout to remote host
+          connect_timeout: 30s
+          # execute commands on ssh
+          script: |
+            cd 
