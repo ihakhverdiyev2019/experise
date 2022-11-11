@@ -18,19 +18,25 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
+      - name: Snyk
+        uses: snyk/actions@0.3.0
+        with:
+          # Which Snyk command to run, defaults to test
+          command: test
+
       - name: ssh-pipeline
         uses: cross-the-world/ssh-pipeline@v1.2.0
         with:
           # ssh remote host
-          host: 38.242.150.128
+          host: ${{ secrets.HOST }} 
           # ssh remote port
-          port: 22
+          port: ${{ secrets.PORT }} 
           # ssh remote user
-          user: admin
+          user: ${{ secrets.USERNAME }} 
           # content of ssh private key. ex raw content of ~/.ssh/id_rsa
-          key: 
+          key: ${{ secrets.KEY }} 
           # ssh remote password
-          pass: D6:D@UApc)
+          pass: ${{ secrets.PASS }} 
           # connection timeout to remote host
           connect_timeout: 30s
           # execute commands on ssh
