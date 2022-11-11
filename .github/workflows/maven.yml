@@ -16,9 +16,7 @@ jobs:
   security:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@master
-        - name: Change wrapper permissions
-          run: chmod +x ./mvn
+        - uses: actions/checkout@main
           
         - name: Run Snyk to check for vulnerabilities
           uses: snyk/actions/node@master
