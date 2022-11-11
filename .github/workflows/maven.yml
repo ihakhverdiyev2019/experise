@@ -13,17 +13,20 @@ on:
     branches: [ "main" ]
 
 jobs:
+  security:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@master
+        - name: Run Snyk to check for vulnerabilities
+          uses: snyk/actions/node@master
+          env:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          with:
+            command: monitor
   build:
-
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
-      - name: Snyk
-        uses: snyk/actions@0.3.0
-        with:
-          # Which Snyk command to run, defaults to test
-          command: test
-
       - name: ssh-pipeline
         uses: cross-the-world/ssh-pipeline@v1.2.0
         with:
