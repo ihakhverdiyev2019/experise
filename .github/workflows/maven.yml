@@ -60,5 +60,5 @@ jobs:
           script: |
             cd ~/experise
             git pull
-            sudo docker build -t experise
+            sudo docker build -t experise .
             sudo docker run -d -p 8080:8080 -t experise
