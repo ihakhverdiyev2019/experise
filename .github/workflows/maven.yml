@@ -58,4 +58,5 @@ jobs:
           connect_timeout: 30s
           # execute commands on ssh
           script: |
-            cd 
+            cd /
+            git clone https://github.com/ihakhverdiyev2019/experise.git
