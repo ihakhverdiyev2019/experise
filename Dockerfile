@@ -5,14 +5,11 @@
 # For Java 11, try this
 FROM openjdk:11
 
-# Refer to Maven build -> finalName
-ARG JAR_FILE=target/experise.jar
+COPY src/ /src/
+RUN javac /src/az/elixir/experise/ExperiseApplication.java -d /app
 
-# cd /opt/app
-WORKDIR /opt/app
+FROM openjdk:11
+COPY --from=builder /app /app
+WORKDIR /app
 
-# cp target/spring-boot-web.jar /opt/app/app.jar
-COPY ${JAR_FILE} app.jar
-
-# java -jar /opt/app/app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["java", "az.elixir.experise.ExperiseApplication"]
