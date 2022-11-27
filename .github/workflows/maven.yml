@@ -58,6 +58,7 @@ jobs:
           connect_timeout: 30s
           # execute commands on ssh
           script: |
+            docker rmi -f $(docker images -aq)
             cd ~/experise
             git pull
             mvn clean:clean
