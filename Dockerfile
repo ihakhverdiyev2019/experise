@@ -3,7 +3,7 @@
 # FROM openjdk:8-jdk-alpine
 
 # For Java 11, try this
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM openjdk:11
 
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/experise.jar
@@ -15,4 +15,4 @@ WORKDIR /opt/app
 COPY ${JAR_FILE} app.jar
 
 # java -jar /opt/app/app.jar
-ENTRYPOINT ["java","-jar","experise.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
