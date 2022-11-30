@@ -61,5 +61,4 @@ jobs:
             cd ~/experise
             git pull
             mvn clean:clean
-            sudo docker build -t experise .
-            sudo docker run -d -p 8080:8080 -t experise
+            mvn jar:jar
