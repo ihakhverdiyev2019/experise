@@ -1,9 +1,15 @@
 package az.elixir.experise.repository;
 
-import az.elixir.experise.model.ScholarshipEntity;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import az.elixir.experise.model.ScholarshipEntity;
+
 @Repository
-public interface ScholarshipRepository extends JpaRepository<ScholarshipEntity,Integer> {
+public interface ScholarshipRepository extends JpaRepository<ScholarshipEntity, Integer> {
+  ScholarshipEntity findByIdAndLangId(int id, int langId);
+
+  List<ScholarshipEntity> findAllByLangId(int langId);
 }

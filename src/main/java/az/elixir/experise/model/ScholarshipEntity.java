@@ -1,66 +1,73 @@
 package az.elixir.experise.model;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "scholarship")
 public class ScholarshipEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String title;
+  private String title;
 
-    @Column(columnDefinition="text")
-    private String text;
+  @Column(columnDefinition = "text")
+  private String text;
 
-    private String photoFront;
+  private String photoFront;
 
-    private String photo;
+  private String photo;
 
-    public ScholarshipEntity() {
-    }
+  private int langId;
 
-    public int getId() {
-        return id;
-    }
+  public ScholarshipEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getText() {
-        return text;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setText(String text) {
-        this.text = text;
-    }
+  public String getText() {
+    return text;
+  }
 
-    public String getPhotoFront() {
-        return photoFront;
-    }
+  public void setText(String text) {
+    this.text = text;
+  }
 
-    public void setPhotoFront(String photoFront) {
-        this.photoFront = photoFront;
-    }
+  public String getPhotoFront() {
+    return photoFront;
+  }
 
-    public String getPhoto() {
-        return photo;
-    }
+  public void setPhotoFront(String photoFront) {
+    this.photoFront = photoFront;
+  }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+  public String getPhoto() {
+    return photo;
+  }
+
+  public void setPhoto(String photo) {
+    this.photo = photo;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

@@ -2,43 +2,51 @@ package az.elixir.experise.model;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "blog_category")
 public class BlogCategoryEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String category;
+  private String category;
 
-    private int count;
+  private int langId;
 
-    public BlogCategoryEntity() {
-    }
+  private int count;
 
-    public int getId() {
-        return id;
-    }
+  public BlogCategoryEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getCategory() {
-        return category;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
+  public String getCategory() {
+    return category;
+  }
 
-    public int getCount() {
-        return count;
-    }
+  public void setCategory(String category) {
+    this.category = category;
+  }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
+  public int getCount() {
+    return count;
+  }
+
+  public void setCount(int count) {
+    this.count = count;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

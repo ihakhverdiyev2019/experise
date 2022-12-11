@@ -1,4 +1,3 @@
 package az.elixir.experise.dto;
 
-public class LanguageView {
-}
+public class LanguageView {}

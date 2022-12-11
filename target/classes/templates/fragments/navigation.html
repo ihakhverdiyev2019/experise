@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="values(degrees,scholar,courses,academic)">
+    <nav class="navbar nav-logo navbar-expand-lg px-0">
+        <a class="navbar-brand" href="index.html">
+            <img src="image/edubit-template-logo.png" alt="logo-image"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-4">
+                    <a class="nav-link  home" th:href="@{/}">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item mr-4 dropdown" th:if="${degrees.size() > 0}">
+                    <a class="nav-link dropdown-toggle home">
+                        Degrees
+                    </a>
+                    <div class="dropdown-menu py-0 my-0">
+                        <a class="dropdown-item" th:each="d : ${degrees}" th:href="@{'/degrees-and-credentials-details/' + ${d.id}}"><span th:text="${d.name}"></span></a>
+                    </div>
+                </li>
+                <li class="nav-item mr-4 dropdown" th:if="${scholar.size() > 0}">
+                    <a class="nav-link dropdown-toggle home">
+                        Scholarships
+                    </a>
+                    <div class="dropdown-menu py-0 my-0">
+                        <a class="dropdown-item" th:each="s : ${scholar}" th:href="@{'/scholarship/' + ${s.id}}"><span th:text="${s.name}"></span></a>
+                    </div>
+                </li>
+                <li class="nav-item mr-4 dropdown" th:if="${courses.size() > 0}">
+                    <a class="nav-link dropdown-toggle home">
+                        Courses
+                    </a>
+                    <div class="dropdown-menu py-0 my-0">
+                        <a class="dropdown-item" th:each="c : ${courses}" th:href="@{'/courses/' + ${c.id}}"><span th:text="${c.name}"></span></a>
+                    </div>
+                </li>
+                <li class="nav-item mr-4 dropdown" th:if="${academic.size() > 0}">
+                    <a class="nav-link dropdown-toggle home">
+                        Academic writing
+                    </a>
+                    <div class="dropdown-menu py-0 my-0">
+                        <a class="dropdown-item" th:each="a : ${academic}" th:href="@{'/research-and-writings-details/' + ${a.id}}"><span th:text="${a.name}"></span></a>
+                    </div>
+                </li>
+                <li class="nav-item mr-4 dropdown">
+                    <a class="nav-link dropdown-toggle home">
+                        Job Opportunities
+                    </a>
+                    <div class="dropdown-menu py-0 my-0">
+                        <a class="dropdown-item" href="#">Internships/Traineeships</a>
+                        <a class="dropdown-item" href="#">Available jobs</a>
+                    </div>
+                </li>
+                <li class="nav-item mr-4 dropdown">
+                    <a class="nav-link dropdown-toggle home">
+                        About Us
+                    </a>
+                    <div class="dropdown-menu py-0 my-0">
+                        <a class="dropdown-item" th:href="@{/about-us}">About ExpeRise</a>
+                        <a class="dropdown-item" href="#">Contact Us</a>
+                    </div>
+                </li>
+                <li class="nav-item  mr-0">
+                    <a class="nav-link" th:href="@{/blog/1}">Blog</a>
+                </li>
+                <li class="nav-item  mr-0">
+                    <a class="nav-link" th:href="@{/faq}">F.A.Q.</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</html>

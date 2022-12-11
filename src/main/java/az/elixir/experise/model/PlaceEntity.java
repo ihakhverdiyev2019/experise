@@ -6,28 +6,37 @@ import javax.persistence.*;
 @Table(name = "places")
 public class PlaceEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String placePhoto;
+  private String placePhoto;
 
-    public PlaceEntity() {
-    }
+  private int langId;
 
-    public int getId() {
-        return id;
-    }
+  public PlaceEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getPlacePhoto() {
-        return placePhoto;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setPlacePhoto(String placePhoto) {
-        this.placePhoto = placePhoto;
-    }
+  public String getPlacePhoto() {
+    return placePhoto;
+  }
+
+  public void setPlacePhoto(String placePhoto) {
+    this.placePhoto = placePhoto;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

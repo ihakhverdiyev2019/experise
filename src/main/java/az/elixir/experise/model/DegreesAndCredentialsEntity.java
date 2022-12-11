@@ -1,64 +1,73 @@
 package az.elixir.experise.model;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "degrees_and_credentials")
 public class DegreesAndCredentialsEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String name;
+  private String name;
 
-    private String photoUrl; // (780X410)
+  private String photoUrl; // (780X410)
 
-    private String frontPhotoUrl; // (400X417)
+  private String frontPhotoUrl; // (400X417)
 
-    private String text;
+  @Column(columnDefinition = "text")
+  private String text;
 
-    public DegreesAndCredentialsEntity() {
-    }
+  private int langId;
 
-    public int getId() {
-        return id;
-    }
+  public DegreesAndCredentialsEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
+  public String getPhotoUrl() {
+    return photoUrl;
+  }
 
-    public String getFrontPhotoUrl() {
-        return frontPhotoUrl;
-    }
+  public void setPhotoUrl(String photoUrl) {
+    this.photoUrl = photoUrl;
+  }
 
-    public void setFrontPhotoUrl(String frontPhotoUrl) {
-        this.frontPhotoUrl = frontPhotoUrl;
-    }
+  public String getFrontPhotoUrl() {
+    return frontPhotoUrl;
+  }
 
-    public String getText() {
-        return text;
-    }
+  public void setFrontPhotoUrl(String frontPhotoUrl) {
+    this.frontPhotoUrl = frontPhotoUrl;
+  }
 
-    public void setText(String text) {
-        this.text = text;
-    }
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

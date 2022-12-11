@@ -1,13 +1,16 @@
 package az.elixir.experise.repository;
 
+import java.util.List;
 
-import az.elixir.experise.model.DegreesAndCredentialsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import az.elixir.experise.model.DegreesAndCredentialsEntity;
 
 @Repository
-public interface DegreesAndCredentialsRepository extends JpaRepository<DegreesAndCredentialsEntity, Integer> {
+public interface DegreesAndCredentialsRepository
+    extends JpaRepository<DegreesAndCredentialsEntity, Integer> {
+  DegreesAndCredentialsEntity findByIdAndLangId(int id, int langId);
 
+  List<DegreesAndCredentialsEntity> findAllByLangId(int langId);
 }

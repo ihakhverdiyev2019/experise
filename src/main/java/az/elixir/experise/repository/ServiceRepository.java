@@ -1,9 +1,14 @@
 package az.elixir.experise.repository;
 
-import az.elixir.experise.model.ServiceEntity;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import az.elixir.experise.model.ServiceEntity;
+
 @Repository
-public interface ServiceRepository extends JpaRepository<ServiceEntity,Integer> {
+public interface ServiceRepository extends JpaRepository<ServiceEntity, Integer> {
+
+  List<ServiceEntity> findAllByLangId(int languageId);
 }

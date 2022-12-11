@@ -6,39 +6,48 @@ import javax.persistence.*;
 @Table(name = "faq")
 public class FAQEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String question;
+  private String question;
 
-    @Column(columnDefinition="text")
-    private String answer;
+  private int langId;
 
-    public FAQEntity() {
-    }
+  @Column(columnDefinition = "text")
+  private String answer;
 
-    public int getId() {
-        return id;
-    }
+  public FAQEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getQuestion() {
-        return question;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+  public String getQuestion() {
+    return question;
+  }
 
-    public String getAnswer() {
-        return answer;
-    }
+  public void setQuestion(String question) {
+    this.question = question;
+  }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
+  public String getAnswer() {
+    return answer;
+  }
+
+  public void setAnswer(String answer) {
+    this.answer = answer;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

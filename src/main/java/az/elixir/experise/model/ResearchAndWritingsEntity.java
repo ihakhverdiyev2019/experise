@@ -1,64 +1,73 @@
 package az.elixir.experise.model;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "research_and_writings")
 public class ResearchAndWritingsEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String name;
-    @Column(columnDefinition="text")
-    private String text;
+  private String name;
 
-    private String frontPhotoUrl;
+  @Column(columnDefinition = "text")
+  private String text;
 
-    private String photoUrl;
+  private String frontPhotoUrl;
 
-    public ResearchAndWritingsEntity() {
-    }
+  private String photoUrl;
 
-    public int getId() {
-        return id;
-    }
+  private int langId;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public ResearchAndWritingsEntity() {}
 
-    public String getName() {
-        return name;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getText() {
-        return text;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setText(String text) {
-        this.text = text;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getFrontPhotoUrl() {
-        return frontPhotoUrl;
-    }
+  public String getText() {
+    return text;
+  }
 
-    public void setFrontPhotoUrl(String frontPhotoUrl) {
-        this.frontPhotoUrl = frontPhotoUrl;
-    }
+  public void setText(String text) {
+    this.text = text;
+  }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
+  public String getFrontPhotoUrl() {
+    return frontPhotoUrl;
+  }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
+  public void setFrontPhotoUrl(String frontPhotoUrl) {
+    this.frontPhotoUrl = frontPhotoUrl;
+  }
+
+  public String getPhotoUrl() {
+    return photoUrl;
+  }
+
+  public void setPhotoUrl(String photoUrl) {
+    this.photoUrl = photoUrl;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

@@ -1,43 +1,47 @@
 package az.elixir.experise.service;
 
+import java.util.ArrayList;
+import java.util.List;
 
-import az.elixir.experise.dto.AllDegreesAndCredentialsView;
-import az.elixir.experise.dto.AllResearchAndWritingsView;
-import az.elixir.experise.dto.DegreesAndCredentialsView;
-import az.elixir.experise.dto.ResearchAndWritingsView;
-import az.elixir.experise.model.DegreesAndCredentialsEntity;
-import az.elixir.experise.model.ResearchAndWritingsEntity;
-import az.elixir.experise.repository.DegreesAndCredentialsRepository;
-import az.elixir.experise.repository.ResearchAndWritingsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import az.elixir.experise.dto.AllResearchAndWritingsView;
+import az.elixir.experise.dto.ResearchAndWritingsView;
+import az.elixir.experise.model.LanguageEntity;
+import az.elixir.experise.model.ResearchAndWritingsEntity;
+import az.elixir.experise.repository.LanguageRepository;
+import az.elixir.experise.repository.ResearchAndWritingsRepository;
 
 @Service
 public class ResearchAndWritingsService {
 
-    @Autowired
-    private ResearchAndWritingsRepository repository;
+  @Autowired private ResearchAndWritingsRepository repository;
+  @Autowired private LanguageRepository languageRepository;
 
-    public List<AllResearchAndWritingsView> findAll() {
-        List<ResearchAndWritingsEntity> getAllDetails = repository.findAll();
-        List<AllResearchAndWritingsView> result = new ArrayList<>();
-        for (ResearchAndWritingsEntity entity :
-                getAllDetails) {
-            AllResearchAndWritingsView allResearchAndWritingsView = new AllResearchAndWritingsView();
-            allResearchAndWritingsView.mapper(entity);
-            result.add(allResearchAndWritingsView);
-        }
-        return result;
+  public List<AllResearchAndWritingsView> findAll(String langCode) {
+    LanguageEntity getLanguageByLangCode =
+        languageRepository.findByLangCodeAndIsEnable(langCode, true);
+
+    List<ResearchAndWritingsEntity> getAllDetails =
+        repository.findAllByLangId(getLanguageByLangCode.getId());
+    List<AllResearchAndWritingsView> result = new ArrayList<>();
+    for (ResearchAndWritingsEntity entity : getAllDetails) {
+      AllResearchAndWritingsView allResearchAndWritingsView = new AllResearchAndWritingsView();
+      allResearchAndWritingsView.mapper(entity);
+      result.add(allResearchAndWritingsView);
     }
+    return result;
+  }
 
-    public ResearchAndWritingsView findById(int id) {
-        ResearchAndWritingsEntity getAllDetails = repository.findById(id).get();
-        ResearchAndWritingsView researchAndWritingsView = new ResearchAndWritingsView();
-        researchAndWritingsView.mapper(getAllDetails);
-        return researchAndWritingsView;
-    }
+  public ResearchAndWritingsView findById(int id, String langCode) {
+    LanguageEntity getLanguageByLangCode =
+        languageRepository.findByLangCodeAndIsEnable(langCode, true);
 
+    ResearchAndWritingsEntity getAllDetails =
+        repository.findByIdAndLangId(id, getLanguageByLangCode.getId());
+    ResearchAndWritingsView researchAndWritingsView = new ResearchAndWritingsView();
+    researchAndWritingsView.mapper(getAllDetails);
+    return researchAndWritingsView;
+  }
 }

@@ -5,54 +5,54 @@ import javax.persistence.*;
 @Entity
 @Table(name = "language")
 public class LanguageEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String langPhoto;
-    private String langText;
-    private String langCode;
-    private boolean isEnable;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    public LanguageEntity() {
-    }
+  private String langPhoto;
+  private String langText;
+  private String langCode;
+  private boolean isEnable;
 
-    public int getId() {
-        return id;
-    }
+  public LanguageEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getLangPhoto() {
-        return langPhoto;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setLangPhoto(String langPhoto) {
-        this.langPhoto = langPhoto;
-    }
+  public String getLangPhoto() {
+    return langPhoto;
+  }
 
-    public String getLangText() {
-        return langText;
-    }
+  public void setLangPhoto(String langPhoto) {
+    this.langPhoto = langPhoto;
+  }
 
-    public void setLangText(String langText) {
-        this.langText = langText;
-    }
+  public String getLangText() {
+    return langText;
+  }
 
-    public String getLangCode() {
-        return langCode;
-    }
+  public void setLangText(String langText) {
+    this.langText = langText;
+  }
 
-    public void setLangCode(String langCode) {
-        this.langCode = langCode;
-    }
+  public String getLangCode() {
+    return langCode;
+  }
 
-    public boolean isEnable() {
-        return isEnable;
-    }
+  public void setLangCode(String langCode) {
+    this.langCode = langCode;
+  }
 
-    public void setEnable(boolean enable) {
-        isEnable = enable;
-    }
+  public boolean isEnable() {
+    return isEnable;
+  }
+
+  public void setEnable(boolean enable) {
+    isEnable = enable;
+  }
 }

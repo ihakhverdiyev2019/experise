@@ -6,79 +6,86 @@ import javax.persistence.*;
 @Table(name = "blog")
 public class BlogEntity {
 
-    @Id
-    @GeneratedValue
-    private int id;
+  @Id @GeneratedValue private int id;
 
-    private String title;
+  private String title;
 
-    @Column(columnDefinition="text")
-    private String text;
+  @Column(columnDefinition = "text")
+  private String text;
 
-    private String photoFront;
+  private String photoFront;
 
-    private String photo;
+  private String photo;
 
-    private int blogCategory;
+  private int blogCategory;
 
-    private boolean switchButton;
+  private boolean switchButton;
 
-    public BlogEntity() {
-    }
+  private int langId;
 
-    public int getId() {
-        return id;
-    }
+  public BlogEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getText() {
-        return text;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setText(String text) {
-        this.text = text;
-    }
+  public String getText() {
+    return text;
+  }
 
-    public String getPhotoFront() {
-        return photoFront;
-    }
+  public void setText(String text) {
+    this.text = text;
+  }
 
-    public void setPhotoFront(String photoFront) {
-        this.photoFront = photoFront;
-    }
+  public String getPhotoFront() {
+    return photoFront;
+  }
 
-    public String getPhoto() {
-        return photo;
-    }
+  public void setPhotoFront(String photoFront) {
+    this.photoFront = photoFront;
+  }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+  public String getPhoto() {
+    return photo;
+  }
 
-    public int getBlogCategory() {
-        return blogCategory;
-    }
+  public void setPhoto(String photo) {
+    this.photo = photo;
+  }
 
-    public void setBlogCategory(int blogCategory) {
-        this.blogCategory = blogCategory;
-    }
+  public int getBlogCategory() {
+    return blogCategory;
+  }
 
-    public boolean isSwitchButton() {
-        return switchButton;
-    }
+  public void setBlogCategory(int blogCategory) {
+    this.blogCategory = blogCategory;
+  }
 
-    public void setSwitchButton(boolean switchButton) {
-        this.switchButton = switchButton;
-    }
+  public boolean isSwitchButton() {
+    return switchButton;
+  }
+
+  public void setSwitchButton(boolean switchButton) {
+    this.switchButton = switchButton;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
+  }
 }

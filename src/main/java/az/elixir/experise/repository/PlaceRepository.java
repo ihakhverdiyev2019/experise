@@ -1,9 +1,9 @@
 package az.elixir.experise.repository;
 
-import az.elixir.experise.model.PlaceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import az.elixir.experise.model.PlaceEntity;
+
 @Repository
-public interface PlaceRepository extends JpaRepository<PlaceEntity,Integer> {
-}
+public interface PlaceRepository extends JpaRepository<PlaceEntity, Integer> {}
