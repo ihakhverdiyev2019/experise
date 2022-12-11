@@ -7,8 +7,6 @@ public class AllResearchAndWritingsView {
 
     private int id;
 
-    private String photoUrl;
-
     private String name;
 
     public AllResearchAndWritingsView() {
@@ -22,14 +20,6 @@ public class AllResearchAndWritingsView {
         this.id = id;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
-
     public String getName() {
         return name;
     }
@@ -41,6 +31,5 @@ public class AllResearchAndWritingsView {
     public void mapper(ResearchAndWritingsEntity a){
         this.id= a.getId();
         this.name =a.getName();
-        this.photoUrl=a.getFrontPhotoUrl();
     }
 }

@@ -1,27 +1,24 @@
 package az.elixir.experise.model;
 
-import org.hibernate.annotations.Type;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "scholarship")
-public class ScholarshipEntity {
+public class AboutEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String title;
-
-    @Column(columnDefinition="text")
     private String text;
-
-    private String photoFront;
-
     private String photo;
 
-    public ScholarshipEntity() {
+
+
+    public AboutEntity() {
     }
 
     public int getId() {
@@ -46,14 +43,6 @@ public class ScholarshipEntity {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getPhotoFront() {
-        return photoFront;
-    }
-
-    public void setPhotoFront(String photoFront) {
-        this.photoFront = photoFront;
     }
 
     public String getPhoto() {

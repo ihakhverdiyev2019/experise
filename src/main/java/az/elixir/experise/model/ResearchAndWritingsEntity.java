@@ -12,7 +12,7 @@ public class ResearchAndWritingsEntity {
     private int id;
 
     private String name;
-
+    @Column(columnDefinition="text")
     private String text;
 
     private String frontPhotoUrl;

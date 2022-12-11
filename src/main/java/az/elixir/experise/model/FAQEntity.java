@@ -12,6 +12,7 @@ public class FAQEntity {
 
     private String question;
 
+    @Column(columnDefinition="text")
     private String answer;
 
     public FAQEntity() {

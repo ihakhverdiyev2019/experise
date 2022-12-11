@@ -10,6 +10,4 @@ import java.util.List;
 @Repository
 public interface DegreesAndCredentialsRepository extends JpaRepository<DegreesAndCredentialsEntity, Integer> {
 
-    List<DegreesAndCredentialsEntity> findAllByCategory(String category);
-
 }

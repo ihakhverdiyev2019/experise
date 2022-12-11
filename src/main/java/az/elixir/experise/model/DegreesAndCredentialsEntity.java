@@ -19,8 +19,6 @@ public class DegreesAndCredentialsEntity {
 
     private String text;
 
-    private String category;
-
     public DegreesAndCredentialsEntity() {
     }
 
@@ -62,13 +60,5 @@ public class DegreesAndCredentialsEntity {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 }

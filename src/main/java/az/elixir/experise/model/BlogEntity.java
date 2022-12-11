@@ -1,9 +1,6 @@
 package az.elixir.experise.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "blog")
@@ -15,6 +12,7 @@ public class BlogEntity {
 
     private String title;
 
+    @Column(columnDefinition="text")
     private String text;
 
     private String photoFront;

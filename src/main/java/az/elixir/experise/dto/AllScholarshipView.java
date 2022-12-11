@@ -7,8 +7,6 @@ public class AllScholarshipView {
 
     private int id;
 
-    private String photoUrl;
-
     private String name;
 
     public AllScholarshipView() {
@@ -22,14 +20,6 @@ public class AllScholarshipView {
         this.id = id;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
-
     public String getName() {
         return name;
     }
@@ -41,6 +31,5 @@ public class AllScholarshipView {
     public void mapper(ScholarshipEntity a){
         this.id= a.getId();
         this.name =a.getTitle();
-        this.photoUrl=a.getPhotoFront();
     }
 }

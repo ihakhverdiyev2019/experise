@@ -3,15 +3,16 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edubit - Gallery</title>
+    <title>Edubit - Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="description" content="Edubit is a Educational Html5 Template. It created for professionals.Bootstrap 4 Exclusive Features made it unique and extremely useful for any professionals users. Edubit is fully responsive and supported in to all device & browsers.">
     <meta name="keywords" content="CSE, BUSINESS, STUDY, REMIP, SERTE, QUIAXMS, LOREMIPSE, ESRITE">
     <meta name="author" content="bitspeck">
-  
+
+
     <!-- favicon -->
-    <link rel="shortcut icon" type="Image/favicon" href="image/favicon-edu-bit.png">
+    <link rel="shortcut icon" type="Image/favicong" href="image/favicon-edu-bit.png">
     <!-- animate.min - css -->
     <link rel="stylesheet" th:href="@{/css/animate.min.css}">
     <!-- animate - css -->
@@ -32,11 +33,11 @@
 </head>
 <body>
 
-    <!-- prelodear start -->
-    <div id="preloader"></div>
-    <!-- prelodear end --> 
-
-<!-- header start -->
+<!--    &lt;!&ndash; prelodear start &ndash;&gt;-->
+<!--    <div id="preloader"></div>-->
+<!--    &lt;!&ndash; prelodear end &ndash;&gt; -->
+    
+    <!-- header start -->
     <header class="header-section sticky-header clearfix">
         <!-- top header end-->
         <div class="menu-sticky">
@@ -58,7 +59,7 @@
                             <li class="nav-item mr-4">
                                 <a class="nav-link" href="about.html">About</a>
                             </li>
-                            <li class="nav-item active mr-4 dropdown">
+                            <li class="nav-item mr-4 dropdown">
                                 <a class="nav-link dropdown-toggle home" href="#">
                                 Pages
                                 </a>
@@ -70,7 +71,7 @@
                                    <a class="dropdown-item" href="notice-details.html">Notice Details</a>
                                 </div>
                             </li>
-                            <li class="nav-item mr-4 dropdown">
+                            <li class="nav-item active mr-4 dropdown">
                                 <a class="nav-link dropdown-toggle home" href="#">
                                 Blog
                                 </a>
@@ -89,7 +90,7 @@
                                     <a class="dropdown-item" href="courses-details.html">Courses Details</a>
                                 </div>
                             </li>
-                            <li class="nav-item  mr-0">
+                            <li class="nav-item  mr-5">
                                 <a class="nav-link" href="contact-us.html">Contact</a>
                             </li>
                             <li class="nav-item search_icon mr-4">
@@ -107,7 +108,7 @@
     <section id="page-breadcrumb">
         <div class="common-overlay"></div>
             <div class="breadcrumb-menu">
-                <h3>GALLERY</h3>
+                <h3>BLOG</h3>
                 <ul class="steps breadcrumb d-flex">
                     <li class="">
                     <a href="index.html">
@@ -121,43 +122,51 @@
                     </li>
                     <li class="active">
                     <a>
-                        Gallery
+                        Blog
                     </a>
                     </li>
                 </ul>
             </div>
     </section>
-
-<!-- ///page-breadcrumb//// -->   
-
 <!-- ///page-breadcrumb//// -->
 
-<!-- portfolio section start -->
-
-    <section id="portfolio">
-        <div class="container">
-            <div class="section-tittle text-center portfolio-title">
-                <h3><small>Our Gallery</small>Our Recent Project</h3>
-            </div>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4" th:each="r : ${result}">
-                            <div class="portfolio-details">
-                                <img th:src="${r.photoUrl}" alt="gallery-image">
-                                <div class="port-overlay">
-                                    <div class="portfolio-contant">
-                                        <p th:text="${r.name}"></p>
-                                        <a th:href="@{'/research-and-writings-details/' + ${lang} + '/' + ${r.id}}"><i class="fa fa-chain-broken"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+<!---Blog --->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 mb-4">
+                <div class="row">
+                    <div class="blog1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 col-blogpage" th:each="r : ${result}">
+                       <div class="blog_image">
+                         <img th:src="${r.photoUrl}" alt="Event Image">
+                        <div class="blog_content">
+                            <a th:href="@{'/blog-details/' + ${lang} + '/' + ${r.id}}">
+                            <h6 th:text="${r.name}">Are you ready to become a best student</h6>
+                            </a>
                         </div>
+                      </div>
                     </div>
+                </div>
+                <!-- 2nd row - end -->
+                <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                  <th:block th:each="i: ${#numbers.sequence(1, pageNum)}">
+                      <li class="page-item active" th:if="${currNum == i}"><a class="page-link" th:href="@{'/blog/'+${langCode}+'/'+${i}+'/'+${categoryId}}"><span th:text="${i}"></span></a></li>
+                      <li class="page-item" th:unless="${currNum == i}"><a class="page-link" th:href="@{'/blog/'+${langCode}+'/'+${i}+'/'+${categoryId}}"><span th:text="${i}"></span></a></li>
+                  </th:block>
+              </ul>
+            </nav>
+            </div>
         </div>
-    </section>
+        <!-- main row -end -->
+    </div>
+</section>
 
-    <!-- portfolio section end -->
-    <!-- Footer Section -->  
 
+<!-- Blog - end -->
+    
+
+<!-- Footer Section -->    
     <footer>
         <section id="footer-top-section">
             <div class="overlay-footer"></div>
@@ -234,25 +243,29 @@
                 <p class="mb-0">©2021 All Right Reserved</p>
             </div>
         </div>
-        <a class="scrollToTop" href="#page-breadcrumb" style=""><i class="fa fa-angle-up"></i></a>
+        <a class="scrollToTop" href="slider-banner" style=""><i class="fa fa-angle-up"></i></a>
     </footer>
     <!-- Footer Section - end -->
 
-
     <!-- jquery-3.5.0.min - js -->
-    <script th:src="@{/js/jquery-3.5.0.min.js}"></script>
+    <script src="js/jquery-3.5.0.min.js"></script>
     <!-- bootstrap.min - js -->
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/fontawesome.min.js}"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
     <!-- popper.min - js -->
-    <script th:src="@{/js/popper.min.js}"></script>
+    <script src="js/popper.min.js"></script>
     <!-- owl.carousel.min - js -->
-    <script th:src="@{/js/owl.carousel.min.js}"></script>
-    <!-- wow.min - js -->
-    <script th:src="@{/js/wow.min.js}"></script>
-    <!--slick js  -->
-    <script th:src="@{/js/slick.js}"></script>
-    <!-- main - js -->
-    <script th:src="@{/js/main.js}"></script>
-</body>
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- slick.js -->
+    <script src="js/slick.js"></script>
+    <!-- wow.min - js -->   
+    <script src="js/wow.min.js"></script>
+    <!-- main - js -->  
+    <script src="js/main.js"></script> 
+
+    </body>
 </html>
+
+
+
+

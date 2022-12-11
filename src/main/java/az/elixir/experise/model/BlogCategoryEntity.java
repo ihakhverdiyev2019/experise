@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "blog-category")
+@Table(name = "blog_category")
 public class BlogCategoryEntity {
 
     @Id
@@ -12,6 +12,8 @@ public class BlogCategoryEntity {
     private int id;
 
     private String category;
+
+    private int count;
 
     public BlogCategoryEntity() {
     }
@@ -30,5 +32,13 @@ public class BlogCategoryEntity {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

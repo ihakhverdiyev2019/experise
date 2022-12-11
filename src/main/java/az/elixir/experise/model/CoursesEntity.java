@@ -12,6 +12,7 @@ public class CoursesEntity {
 
     private String title;
 
+    @Column(columnDefinition="text")
     private String text;
 
     private String photoFront;

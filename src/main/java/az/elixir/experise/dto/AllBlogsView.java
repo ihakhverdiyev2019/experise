@@ -1,8 +1,10 @@
 package az.elixir.experise.dto;
 
-import az.elixir.experise.model.DegreesAndCredentialsEntity;
+import az.elixir.experise.model.BlogEntity;
+import az.elixir.experise.model.CoursesEntity;
 
-public class AllDegreesAndCredentialsView {
+public class AllBlogsView {
+
 
     private int id;
 
@@ -10,7 +12,7 @@ public class AllDegreesAndCredentialsView {
 
     private String name;
 
-    public AllDegreesAndCredentialsView() {
+    public AllBlogsView() {
     }
 
     public int getId() {
@@ -37,9 +39,9 @@ public class AllDegreesAndCredentialsView {
         this.name = name;
     }
 
-    public void mapper(DegreesAndCredentialsEntity a){
+    public void mapper(BlogEntity a){
         this.id= a.getId();
-        this.name =a.getName();
-        this.photoUrl=a.getFrontPhotoUrl();
+        this.name =a.getTitle();
+        this.photoUrl=a.getPhotoFront();
     }
 }
