@@ -19,6 +19,22 @@ public class DegreesAndCredentialsService {
   @Autowired private DegreesAndCredentialsRepository degreesAndCredentialsRepository;
   @Autowired private LanguageRepository languageRepository;
 
+  public List<AllDegreesAndCredentialsView> findAllByCategory(String category, String langCode) {
+    LanguageEntity getLanguageByLangCode =
+        languageRepository.findByLangCodeAndIsEnable(langCode, true);
+    List<DegreesAndCredentialsEntity> getAllDetails =
+        degreesAndCredentialsRepository.findAllByCategoryAndLangId(
+            category, getLanguageByLangCode.getId());
+    List<AllDegreesAndCredentialsView> result = new ArrayList<>();
+    for (DegreesAndCredentialsEntity entity : getAllDetails) {
+      AllDegreesAndCredentialsView allDegreesAndCredentialsView =
+          new AllDegreesAndCredentialsView();
+      allDegreesAndCredentialsView.mapper(entity);
+      result.add(allDegreesAndCredentialsView);
+    }
+    return result;
+  }
+
   public DegreesAndCredentialsView findById(int id, String langCode) {
     LanguageEntity getLanguageByLangCode =
         languageRepository.findByLangCodeAndIsEnable(langCode, true);

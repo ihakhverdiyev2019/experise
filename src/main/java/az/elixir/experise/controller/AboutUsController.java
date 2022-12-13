@@ -30,6 +30,8 @@ public class AboutUsController {
       if (session.getAttribute("lang") == null && langCode == null) {
         langCode = "EN";
         session.setAttribute("lang", langCode);
+      } else {
+        langCode = session.getAttribute("lang").toString();
       }
       AboutView result = aboutService.findAbout();
 

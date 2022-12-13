@@ -68,15 +68,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="value_image">
-                    <a href="https://www.youtube.com/watch?v=fEErySYqItI" class="video-icon bla-1">
-                        <i class="fa fa-play"></i>
-                    </a>
+                    <img th:src="${result.photo}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about_para">
                     <small th:text="${result.title}">ABOUT US</small>
-                    <p class="mb-4 peragraph" th:text="${result.text}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora assumenda velit officiis quae ipsa fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore totam tempora quas veniam illum suscipit in sint? Suscipit, fugiat, maiores.Tempora assumenda velit officiis quae ipsa fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore totam tempora quas veniam illum suscipit in sint? Suscipit.</p>
+                    <p class="mb-4 peragraph" th:utext="${result.text}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora assumenda velit officiis quae ipsa fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore totam tempora quas veniam illum suscipit in sint? Suscipit, fugiat, maiores.Tempora assumenda velit officiis quae ipsa fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore totam tempora quas veniam illum suscipit in sint? Suscipit.</p>
                 </div>
             </div>
         </div>

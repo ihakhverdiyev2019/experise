@@ -56,7 +56,7 @@ public class HomePageController {
       model.addAttribute("title", "Home");
 
     } catch (Exception exception) {
-      return "sdgadsf.html";
+      return "index.html";
     }
     return "index.html";
   }

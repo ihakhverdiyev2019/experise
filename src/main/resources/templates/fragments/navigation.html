@@ -16,13 +16,10 @@
                         Home
                     </a>
                 </li>
-                <li class="nav-item mr-4 dropdown" th:if="${degrees.size() > 0}">
-                    <a class="nav-link dropdown-toggle home">
+                <li class="nav-item mr-4" th:if="${degrees.size() > 0}">
+                    <a class="nav-link" th:href="@{'/degrees-and-credentials'}">
                         Degrees
                     </a>
-                    <div class="dropdown-menu py-0 my-0">
-                        <a class="dropdown-item" th:each="d : ${degrees}" th:href="@{'/degrees-and-credentials-details/' + ${d.id}}"><span th:text="${d.name}"></span></a>
-                    </div>
                 </li>
                 <li class="nav-item mr-4 dropdown" th:if="${scholar.size() > 0}">
                     <a class="nav-link dropdown-toggle home">

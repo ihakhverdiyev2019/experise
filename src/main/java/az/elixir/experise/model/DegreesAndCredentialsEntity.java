@@ -16,6 +16,8 @@ public class DegreesAndCredentialsEntity {
 
   private String frontPhotoUrl; // (400X417)
 
+  private String category;
+
   @Column(columnDefinition = "text")
   private String text;
 
@@ -69,5 +71,13 @@ public class DegreesAndCredentialsEntity {
 
   public void setLangId(int langId) {
     this.langId = langId;
+  }
+
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
   }
 }

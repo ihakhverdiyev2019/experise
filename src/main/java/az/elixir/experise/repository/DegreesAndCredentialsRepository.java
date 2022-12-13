@@ -12,5 +12,7 @@ public interface DegreesAndCredentialsRepository
     extends JpaRepository<DegreesAndCredentialsEntity, Integer> {
   DegreesAndCredentialsEntity findByIdAndLangId(int id, int langId);
 
+  List<DegreesAndCredentialsEntity> findAllByCategoryAndLangId(String category, int langId);
+
   List<DegreesAndCredentialsEntity> findAllByLangId(int langId);
 }
