@@ -39,6 +39,9 @@ public class AboutUsController {
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
+
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
       model.addAttribute("title", "About Us");

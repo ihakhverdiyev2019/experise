@@ -62,4 +62,22 @@ public class DegreesAndCredentialsService {
 
     return result;
   }
+
+  public List<AllDegreesAndCredentialsView> isFooter(String langCode) {
+    LanguageEntity getLanguageByLangCode =
+        languageRepository.findByLangCodeAndIsEnable(langCode, true);
+
+    List<AllDegreesAndCredentialsView> result = new ArrayList<>();
+    List<DegreesAndCredentialsEntity> getAll =
+        degreesAndCredentialsRepository.findAllByLangIdAndIsFooter(
+            getLanguageByLangCode.getId(), true);
+    for (DegreesAndCredentialsEntity degreesAndCredentialsEntity : getAll) {
+      AllDegreesAndCredentialsView allDegreesAndCredentialsView =
+          new AllDegreesAndCredentialsView();
+      allDegreesAndCredentialsView.mapper(degreesAndCredentialsEntity);
+      result.add(allDegreesAndCredentialsView);
+    }
+
+    return result;
+  }
 }

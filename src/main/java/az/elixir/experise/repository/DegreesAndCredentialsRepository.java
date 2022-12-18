@@ -15,4 +15,6 @@ public interface DegreesAndCredentialsRepository
   List<DegreesAndCredentialsEntity> findAllByCategoryAndLangId(String category, int langId);
 
   List<DegreesAndCredentialsEntity> findAllByLangId(int langId);
+
+  List<DegreesAndCredentialsEntity> findAllByLangIdAndIsFooter(int langId, boolean isFooter);
 }

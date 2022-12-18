@@ -51,6 +51,8 @@ public class HomePageController {
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
 
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+
       //            model.addAttribute("serviceViewSize", serviceView.size());
       model.addAttribute("placeViewSize", placeView.size());
       model.addAttribute("title", "Home");

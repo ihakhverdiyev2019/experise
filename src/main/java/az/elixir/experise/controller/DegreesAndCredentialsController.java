@@ -45,6 +45,8 @@ public class DegreesAndCredentialsController {
       List<AllDegreesAndCredentialsView> preparatory =
           degreesAndCredentialsService.findAllByCategory("preparatory", langCode);
 
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
@@ -79,6 +81,8 @@ public class DegreesAndCredentialsController {
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
+
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 
       model.addAttribute("degree", degreeDetails);
       model.addAttribute("title", degreeDetails.getName());

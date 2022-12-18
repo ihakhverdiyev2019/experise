@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="footer">
+<div th:fragment="values(degrees)">
     <!-- Footer Section -->
     <footer>
         <section id="footer-top-section">
@@ -28,41 +28,26 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 footer-col">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-col">
                         <div class="footer-service wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                            <h3 class="footer-text ">Pages</h3>
+                            <h3 class="footer-text ">About US</h3>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="service.html">Service</a></li>
-                                <li><a href="courses.html">Courses</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="notice.html">Notice</a></li>
+                                <li><a th:href="@{'/about-us'}">About ExpeRise</a></li>
+                                <li><a href="service.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 footer-col wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                        <div class="footer-news">
-                            <h3 class="footer-text ">Recent Posts</h3>
-                            <div class="media ">
-                                <img class="mr-3 mb-4" src="image/footer.image.png" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <a href="#"><h5 class="mt-0">Magna aliqua enimad minim </h5></a>
-                                    <span>Feb 28, 2021</span>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <img class="mr-3" src="image/footer.image.2.png" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <a href="#"><h5 class="mt-0">Magna aliqua enimad minim </h5></a>
-                                    <span>Feb 28, 2021</span>
-                                </div>
-                            </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-col">
+                        <div class="footer-service wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                            <h3 class="footer-text ">Degrees</h3>
+                            <ul>
+                                <li th:each="d : ${degrees}" ><a th:href="@{'/degrees-and-credentials-details/' + ${d.id}}">[(${d.name})]</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 footer-col wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
                         <div class="footer-contact">
-                            <h3 class="footer-text ">Contacts</h3>
+                            <h3 class="footer-text ">Location</h3>
                             <p>Discover St, New York, NY 10012, USA</p>
                             <ul>
                                 <li><i class="fa fa-phone mr-2"></i>+123 456 789</li>
@@ -75,7 +60,7 @@
         </section>
         <div class="footer-bottom">
             <div class="footer-bottom-text text-center">
-                <p class="mb-0">©2021 All Right Reserved</p>
+                <p class="mb-0">©2022 All Right Reserved</p>
             </div>
         </div>
         <a class="scrollToTop" href="slider-banner" style=""><i class="fa fa-angle-up"></i></a>

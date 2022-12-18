@@ -23,6 +23,8 @@ public class DegreesAndCredentialsEntity {
 
   private int langId;
 
+  private boolean isFooter;
+
   public DegreesAndCredentialsEntity() {}
 
   public int getId() {
@@ -79,5 +81,13 @@ public class DegreesAndCredentialsEntity {
 
   public void setCategory(String category) {
     this.category = category;
+  }
+
+  public boolean getIsFooter() {
+    return isFooter;
+  }
+
+  public void setIsFooter(boolean footer) {
+    isFooter = footer;
   }
 }

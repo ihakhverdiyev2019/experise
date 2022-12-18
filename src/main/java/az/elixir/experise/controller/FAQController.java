@@ -38,6 +38,8 @@ public class FAQController {
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
 
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+
       model.addAttribute("faq", faqService.findAll(langCode));
       model.addAttribute("lang", langCode);
       model.addAttribute("title", "FAQ");

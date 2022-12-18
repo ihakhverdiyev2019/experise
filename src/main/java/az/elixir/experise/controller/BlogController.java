@@ -50,6 +50,8 @@ public class BlogController {
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
 
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
@@ -91,6 +93,8 @@ public class BlogController {
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
 
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
@@ -120,6 +124,8 @@ public class BlogController {
 
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
+
+      model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
