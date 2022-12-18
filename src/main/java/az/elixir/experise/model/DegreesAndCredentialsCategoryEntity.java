@@ -1,33 +1,32 @@
 package az.elixir.experise.model;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "degrees_and_credentials_category")
 public class DegreesAndCredentialsCategoryEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    public DegreesAndCredentialsCategoryEntity() {
-    }
+  private String name;
 
-    public int getId() {
-        return id;
-    }
+  public DegreesAndCredentialsCategoryEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

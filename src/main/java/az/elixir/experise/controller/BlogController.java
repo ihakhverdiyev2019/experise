@@ -20,6 +20,7 @@ import az.elixir.experise.service.*;
 public class BlogController {
 
   @Autowired private BlogService blogService;
+  @Autowired private FooterService footerService;
 
   @Autowired private CoursesService coursesService;
   @Autowired private DegreesAndCredentialsService degreesAndCredentialsService;
@@ -49,6 +50,7 @@ public class BlogController {
 
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
+      model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 
@@ -89,6 +91,7 @@ public class BlogController {
       model.addAttribute("categoryId", categoryId);
       model.addAttribute("pageNum", num);
       model.addAttribute("currNum", Integer.parseInt(page));
+      model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
@@ -124,6 +127,7 @@ public class BlogController {
 
       model.addAttribute("result", result);
       model.addAttribute("lang", langCode);
+      model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 

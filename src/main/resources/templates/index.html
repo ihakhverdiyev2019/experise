@@ -5,47 +5,46 @@
 <body>
 
 <!-- prelodear start -->
-    <div id="preloader"></div>
+<div id="preloader"></div>
 <!-- prelodear end -->  
 
 <!-- header start -->
-    <header class="header-section sticky-header clearfix">
+<header class="header-section sticky-header clearfix">
         <!-- top header end-->
         <div class="menu-sticky">
             <div class="container">
                 <nav th:insert="fragments/navigation :: values(degrees=${degrees},scholar=${scholar},courses=${courses},academic=${academic})"></nav>
             </div>
         </div>
-    </header>
+</header>
+<!-- Header End -->
 
-    <!-- Header End -->
-
-    <!-- banner section -->
-   
-        <div id="banner" class="banner_content">           
+<!-- banner section -->
+<div id="banner" class="banner_content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-1 col-sm-12 offset-sm-0 align-items-center">
                         <div class="banner_heading">
-                            <h1 class="wow fadeIn" data-wow-duration="2s" data-wow-delay=".2s">Distance Learning for further expansion</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit.</p>
+                            <h1 class="wow fadeIn" data-wow-duration="2s" data-wow-delay=".2s" th:text="${banner.title}">Distance Learning for further expansion</h1>
+                            <p th:text="${banner.text}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.consectetur adipiscing elit.</p>
                             
                         </div>
                     </div>
                     <div class="col-md-6 banner_image pr-0">
                         <div class="banner-img">
-                            <img src="image/Shape-1.png" alt="banner-image">
+                            <img th:src="${banner.shapePhoto}" alt="banner-image">
                             <div class="banner-another">
-                                <img src="image/photo2.png" alt="banner-image">
+                                <img th:src="${banner.photo}" alt="banner-image">
                             </div>
                         </div>
                     </div>
                 </div>             
             </div>
-        </div>      
-    <!-- banner section end -->
-        <!-- course category -->
-            <section id="bit-course-category" th:if="${serviceViewSize>0}">
+</div>
+<!-- banner section end -->
+
+<!-- service section -->
+<section id="bit-course-category" th:if="${service.size() > 0}">
                 <div class="container">
                     <div class="row">
                         <div class="category-feature">
@@ -56,30 +55,24 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-12" th:each="services : ${home.serviceView}">
+                                    <div class="col-lg-4 col-md-4 col-sm-12" th:each="s : ${service}">
                                         <div class="single-feature">
-                                            <img width="60" height="60" viewBox="0 0 60 60" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Gorgosaurus_BW_transparent.png" />
+                                            <img width="60" height="60" viewBox="0 0 60 60" th:src="${s.servicePhoto}" />
 
-                                            <h4 class="mt-3" th:text="${services.serviceName}">Awesome Instractor</h4>
-                                            <p th:text="${services.serviceDescription}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sed iste obcaecati eligendi, ullam vel!</p>
+                                            <h4 class="mt-3" th:text="${s.serviceName}">Awesome Instractor</h4>
+                                            <p th:text="${s.serviceDescription}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat sed iste obcaecati eligendi, ullam vel!</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="single-feature">
-                                <a href="#">Get Strated For Free</a>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
             </section>
-            <!-- course category end -->
+<!-- service section end -->
 
-    <!-- why our platform better -->
-            <section id="bit-platform">
+<!-- why our platform better -->
+<section id="bit-platform">
                 <div class="" id="venue">
                     <div class="container">
                         <div class="row animate-in-down">
@@ -147,12 +140,11 @@
                         </div>
                     </div>
                 </div>
-            </section>  
+            </section>
+<!-- why our platform better End -->
 
-    <!-- why our platform better End -->
-    <!-- Course metarials -->
-
-            <section id="bit-course-materials" th:if="${placeViewSize>0}">
+<!-- Course metarials -->
+<section id="bit-course-materials" th:if="${place.size() > 0}">
                 <div class="container">
                     <div class="section-tittle course-metarials justify-content-between">
                         <div class="section-course-header common-title">
@@ -162,16 +154,16 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-12 sm-mb-0" th:each="places : ${home.placeView}">
-                               <img th:src="@{${places.placePhoto}}">
+                        <div class="col-lg-3 col-md-6 col-sm-12 sm-mb-0" th:each="p : ${place}">
+                               <img th:src="@{${p.placePhoto}}">
                         </div>
                     </div>
                 </div>
             </section>
-    <!-- Course metarials end -->
+<!-- Course metarials end -->
 
-    <!-- Get registeer now  -->
-    <section id="bit-reservation" class="parallax-bg layer-overlay overlay-theme-colored-9" data-bg-img="" data-parallax-ratio="0.4">
+<!-- Get registeer now  -->
+<section id="bit-reservation" class="parallax-bg layer-overlay overlay-theme-colored-9" data-bg-img="" data-parallax-ratio="0.4">
         <div class="register-overlay"></div>
         <div class="container">
             <div class="row">
@@ -245,12 +237,10 @@
             </div>
         </div>
     </section>
-    <!-- get register now End -->
+<!-- get register now End -->
 
- 
- <!-- testimonial section -->
-
-<section id="bit-testimonial-bg" class="testimonial text-center">
+<!-- testimonial section -->
+<section id="bit-testimonial-bg" class="testimonial text-center" th:if="${testimonial.size() > 0}">
     <div class="container">
         <div class="tesimonial-overlay"></div>
         <div class="section-tittle testimonial-heder text-center">
@@ -261,30 +251,14 @@
         <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
          
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
+                <div class="carousel-item" th:each="t : ${testimonial}">
                     <div class="testimonial4_slide">
-                        <img src="image/testimonial-client.jpg" class="img-circle img-responsive" alt="client-image">
-                        <h4>Jason Roy</h4>
-                        <span>English Student</span>
+                        <img th:src="${t.photoUrl}" class="img-circle img-responsive" alt="client-image">
+                        <h4 th:text="${t.name}">Jason Roy</h4>
+                        <span th:text="${t.position}">English Student</span>
 
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        <p th:text="${t.text}">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                         
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="testimonial4_slide">
-                        <img src="image/testimonial-client.jpg" class="img-circle img-responsive" alt="client-image">
-                        <h4>Jason Roy</h4>
-                        <span>Onile Student</span>                    
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="testimonial4_slide">
-                        <img src="image/testimonial-client.jpg" class="img-circle img-responsive" alt="client-image">
-                        <h4>Jason Roy</h4>
-                        <span>Math Student</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                     </div>
                 </div>
             </div>
@@ -297,15 +271,26 @@
         </div>
     </div>
 </section>
-
-
 <!-- testimonial end -->
 
-    <!-- Footer Section -->
-<th:block layout:insert="~{fragments/footer}"/>
+<!-- partner section -->
+<section id="brand-section" th:if="${partner.size() > 0}">
+    <div class="container">
+        <div class="client owl-carousel owl-theme">
+            <div class="item" th:each="part : ${partner}">
+                <div class="client-img">
+                    <img th:src="${part.photo}" alt="fae_img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- partner end -->
 
+<!-- footer section -->
+<footer th:insert="fragments/footer :: values(degrees=${degreesFooter}, footer=${footer})"></footer>
+<!-- footer end -->
 
-
-
+<div th:insert="fragments/whatsapp :: whatsapp"></div>
 </body>
 </html>

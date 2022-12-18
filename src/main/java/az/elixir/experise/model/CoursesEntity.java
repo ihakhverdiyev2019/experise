@@ -15,8 +15,6 @@ public class CoursesEntity {
   @Column(columnDefinition = "text")
   private String text;
 
-  private String photoFront;
-
   private String photo;
 
   private int langId;
@@ -45,14 +43,6 @@ public class CoursesEntity {
 
   public void setText(String text) {
     this.text = text;
-  }
-
-  public String getPhotoFront() {
-    return photoFront;
-  }
-
-  public void setPhotoFront(String photoFront) {
-    this.photoFront = photoFront;
   }
 
   public String getPhoto() {

@@ -5,54 +5,54 @@ import javax.persistence.*;
 @Entity
 @Table(name = "service_language")
 public class ServiceLanguageEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String serviceName;
-    private String serviceDescription;
-    private int serviceId;
-    private int languageId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    public ServiceLanguageEntity() {
-    }
+  private String serviceName;
+  private String serviceDescription;
+  private int serviceId;
+  private int languageId;
 
-    public int getId() {
-        return id;
-    }
+  public ServiceLanguageEntity() {}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getServiceName() {
-        return serviceName;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
+  public String getServiceName() {
+    return serviceName;
+  }
 
-    public String getServiceDescription() {
-        return serviceDescription;
-    }
+  public void setServiceName(String serviceName) {
+    this.serviceName = serviceName;
+  }
 
-    public void setServiceDescription(String serviceDescription) {
-        this.serviceDescription = serviceDescription;
-    }
+  public String getServiceDescription() {
+    return serviceDescription;
+  }
 
-    public int getServiceId() {
-        return serviceId;
-    }
+  public void setServiceDescription(String serviceDescription) {
+    this.serviceDescription = serviceDescription;
+  }
 
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
-    }
+  public int getServiceId() {
+    return serviceId;
+  }
 
-    public int getLanguageId() {
-        return languageId;
-    }
+  public void setServiceId(int serviceId) {
+    this.serviceId = serviceId;
+  }
 
-    public void setLanguageId(int languageId) {
-        this.languageId = languageId;
-    }
+  public int getLanguageId() {
+    return languageId;
+  }
+
+  public void setLanguageId(int languageId) {
+    this.languageId = languageId;
+  }
 }

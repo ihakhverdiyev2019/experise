@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import az.elixir.experise.dto.ResearchAndWritingsView;
-import az.elixir.experise.service.CoursesService;
-import az.elixir.experise.service.DegreesAndCredentialsService;
-import az.elixir.experise.service.ResearchAndWritingsService;
-import az.elixir.experise.service.ScholarshipService;
+import az.elixir.experise.service.*;
 
 @Controller
 public class ResearchAndWritingsController {
@@ -24,6 +21,7 @@ public class ResearchAndWritingsController {
   @Autowired private ScholarshipService scholarshipService;
 
   @Autowired private CoursesService coursesService;
+  @Autowired private FooterService footerService;
 
   @RequestMapping(value = "/research-and-writings-details/{id}", method = RequestMethod.GET)
   public String researchAndWritingsDetailsPage(
@@ -43,6 +41,7 @@ public class ResearchAndWritingsController {
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
+      model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 

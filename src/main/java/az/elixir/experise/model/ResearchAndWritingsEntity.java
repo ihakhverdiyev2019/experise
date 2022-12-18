@@ -15,8 +15,6 @@ public class ResearchAndWritingsEntity {
   @Column(columnDefinition = "text")
   private String text;
 
-  private String frontPhotoUrl;
-
   private String photoUrl;
 
   private int langId;
@@ -45,14 +43,6 @@ public class ResearchAndWritingsEntity {
 
   public void setText(String text) {
     this.text = text;
-  }
-
-  public String getFrontPhotoUrl() {
-    return frontPhotoUrl;
-  }
-
-  public void setFrontPhotoUrl(String frontPhotoUrl) {
-    this.frontPhotoUrl = frontPhotoUrl;
   }
 
   public String getPhotoUrl() {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="values(degrees)">
+<div th:fragment="values(degrees, footer)">
     <!-- Footer Section -->
     <footer>
         <section id="footer-top-section">
@@ -9,21 +9,27 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12 footer-col wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
                         <div class="footer-about">
-                            <img src="image/edubit-footer-logo.png" alt="footer-image">
-                            <p class="mb-4">Lorem of the main advantages of Mastestudy is a simple interface. Everything is created for users’ convenience.</p>
+                            <img th:src="${footer.footerLogo}" alt="footer-image">
+                            <p class="mb-4" th:text="${footer.briefInfo}">Lorem of the main advantages of Mastestudy is a simple interface. Everything is created for users’ convenience.</p>
                             <h5> Follow Us</h5>
                             <ul class="d-flex">
-                                <li class="facebook mr-4">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                <li class="facebook mr-4" th:if="${footer.facebook != null}">
+                                    <a th:href="${footer.facebook}"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li class="linkedin mr-4">
-                                    <a href=""><i class="fa fa-linkedin-square"></i></a>
+                                <li class="linkedin mr-4" th:if="${footer.linkedin != null}">
+                                    <a th:href="${footer.linkedin}"><i class="fa fa-linkedin-square"></i></a>
                                 </li>
-                                <li class="instagram mr-4">
-                                    <a href=""><i class="fa fa-instagram"></i></a>
+                                <li class="instagram mr-4" th:if="${footer.instagram != null}">
+                                    <a th:href="${footer.instagram}"><i class="fa fa-instagram"></i></a>
                                 </li>
-                                <li class="twitter mr-4">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                <li class="twitter mr-4" th:if="${footer.twitter != null}">
+                                    <a th:href="${footer.twitter}"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li class="youtube mr-4" th:if="${footer.youtube != null}">
+                                    <a th:href="${footer.youtube}"><i class="fa fa-youtube"></i></a>
+                                </li>
+                                <li class="whatsapp mr-4" th:if="${footer.whatsapp != null}">
+                                    <a th:href="${footer.whatsapp}"><i class="fa fa-whatsapp"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -47,11 +53,11 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12 footer-col wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
                         <div class="footer-contact">
-                            <h3 class="footer-text ">Location</h3>
-                            <p>Discover St, New York, NY 10012, USA</p>
+                            <h3 class="footer-text ">Head Quarter</h3>
+                            <p th:text="${footer.address}">Discover St, New York, NY 10012, USA</p>
                             <ul>
-                                <li><i class="fa fa-phone mr-2"></i>+123 456 789</li>
-                                <li><i class="fa fa-envelope-o mr-2"></i>example@gmail.com</li>
+                                <li><i class="fa fa-phone mr-2"></i> [(${footer.phoneNumber})]</li>
+                                <li><i class="fa fa-envelope-o mr-2"></i> [(${footer.email})]</li>
                             </ul>
                         </div>
                     </div>
@@ -63,24 +69,24 @@
                 <p class="mb-0">©2022 All Right Reserved</p>
             </div>
         </div>
-        <a class="scrollToTop" href="slider-banner" style=""><i class="fa fa-angle-up"></i></a>
     </footer>
     <!-- Footer Section - end -->
 
     <!-- jquery-3.5.0.min - js -->
-    <script th:src="@{/js/jquery-3.5.0.min.js}"></script>
+    <script src="/js/jquery-3.5.0.min.js"></script>
     <!-- bootstrap.min - js -->
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/fontawesome.min.js}"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- fontawesome.min.js -->
+    <script src="/js/fontawesome.min.js"></script>
     <!-- popper.min - js -->
-    <script th:src="@{/js/popper.min.js}"></script>
+    <script src="/js/popper.min.js"></script>
     <!-- owl.carousel.min - js -->
-    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <script src="/js/owl.carousel.min.js"></script>
     <!-- wow.min - js -->
-    <script th:src="@{/js/wow.min.js}"></script>
+    <script src="/js/wow.min.js"></script>
     <!--slick js  -->
-    <script th:src="@{/js/slick.js}"></script>
+    <script src="/js/slick.js"></script>
     <!-- main - js -->
-    <script th:src="@{/js/main.js}"></script>
+    <script src="/js/main.js"></script>
 </div>
 </html>

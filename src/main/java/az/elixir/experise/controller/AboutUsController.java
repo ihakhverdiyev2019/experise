@@ -15,6 +15,8 @@ import az.elixir.experise.service.*;
 public class AboutUsController {
 
   @Autowired private AboutService aboutService;
+  @Autowired private FooterService footerService;
+
   @Autowired private DegreesAndCredentialsService degreesAndCredentialsService;
 
   @Autowired private ScholarshipService scholarshipService;
@@ -39,6 +41,7 @@ public class AboutUsController {
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
+      model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 

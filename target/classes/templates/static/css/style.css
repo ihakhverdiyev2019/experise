@@ -2030,6 +2030,12 @@ footer .scrollToTop i {
 .footer-about  ul .twitter a i{
   background-color: #22E8FF;
 }
+.footer-about  ul .whatsapp a i{
+  background-color: #075e54;
+}
+.footer-about  ul .youtube a i{
+  background-color: #FF0000;
+}
 
 /*===============================
        footer section - end

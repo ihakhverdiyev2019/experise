@@ -14,6 +14,8 @@ import az.elixir.experise.service.*;
 public class FAQController {
 
   @Autowired private FAQService faqService;
+  @Autowired private FooterService footerService;
+
   @Autowired private DegreesAndCredentialsService degreesAndCredentialsService;
 
   @Autowired private ScholarshipService scholarshipService;
@@ -37,6 +39,7 @@ public class FAQController {
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
+      model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 
