@@ -12,4 +12,8 @@ public interface ScholarshipRepository extends JpaRepository<ScholarshipEntity, 
   ScholarshipEntity findByIdAndLangId(int id, int langId);
 
   List<ScholarshipEntity> findAllByLangId(int langId);
+
+  ScholarshipEntity findByLangIdAndReferId(int langId, int referID);
+
+  List<ScholarshipEntity> findAllByReferId(int referId);
 }

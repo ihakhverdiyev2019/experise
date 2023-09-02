@@ -40,6 +40,7 @@ public class CoursesController {
       model.addAttribute("courses", coursesService.findAll(langCode));
       model.addAttribute("academic", researchAndWritingsService.findAll(langCode));
       model.addAttribute("footer", footerService.find(langCode));
+      model.addAttribute("seo", coursesService.seoDetails(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
 

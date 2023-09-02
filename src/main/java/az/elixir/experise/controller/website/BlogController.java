@@ -43,6 +43,7 @@ public class BlogController {
       int num = blogService.numOfPage();
 
       List<BlogCategoryEntity> category = blogService.getCategoryDetails(langCode);
+      model.addAttribute("seo", blogService.seoDetails(langCode));
 
       model.addAttribute("category", category);
       model.addAttribute("pageNum", num);
@@ -87,6 +88,7 @@ public class BlogController {
           blogService.getAllBlogsByCategory(
               Integer.parseInt(page), Integer.parseInt(categoryId), langCode);
       int num = blogService.numOfPageByCategory(Integer.parseInt(categoryId), langCode);
+      model.addAttribute("seo", blogService.seoDetails(langCode));
 
       model.addAttribute("categoryId", categoryId);
       model.addAttribute("pageNum", num);
@@ -130,6 +132,7 @@ public class BlogController {
       model.addAttribute("footer", footerService.find(langCode));
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+      model.addAttribute("seo", blogService.seoDetails(langCode));
 
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));

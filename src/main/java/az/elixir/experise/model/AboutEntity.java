@@ -1,8 +1,11 @@
 package az.elixir.experise.model;
 
+import java.time.Instant;
+
 import javax.persistence.*;
 
 @Entity
+@Table(name = "about")
 public class AboutEntity {
 
   @Id
@@ -16,6 +19,13 @@ public class AboutEntity {
 
   private String photo;
   private int langId;
+
+  private int createdBy;
+  private int updatedBy;
+
+  private Instant createdAt;
+
+  private Instant updatedAt;
 
   public AboutEntity() {}
 
@@ -57,5 +67,37 @@ public class AboutEntity {
 
   public void setLangId(int langId) {
     this.langId = langId;
+  }
+
+  public int getCreatedBy() {
+    return createdBy;
+  }
+
+  public void setCreatedBy(int createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  public int getUpdatedBy() {
+    return updatedBy;
+  }
+
+  public void setUpdatedBy(int updatedBy) {
+    this.updatedBy = updatedBy;
+  }
+
+  public Instant getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(Instant createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public Instant getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(Instant updatedAt) {
+    this.updatedAt = updatedAt;
   }
 }

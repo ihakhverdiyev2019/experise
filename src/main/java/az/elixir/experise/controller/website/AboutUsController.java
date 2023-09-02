@@ -35,7 +35,8 @@ public class AboutUsController {
       } else {
         langCode = session.getAttribute("lang").toString();
       }
-      AboutView result = aboutService.findAbout();
+      AboutView result = aboutService.findAbout(langCode);
+      model.addAttribute("seo", aboutService.seoDetails(langCode));
 
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
@@ -70,7 +71,7 @@ public class AboutUsController {
   //            model.addAttribute("title", result.getName());
   //
   //        }catch (Exception exception){
-  //            return "index.html";
+  //            return "admin-dashboard.html";
   //        }
   //        return "contact.html";
   //    }

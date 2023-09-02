@@ -12,6 +12,10 @@ public class DegreesAndCredentialsCategoryEntity {
 
   private String name;
 
+  private String categoryKey;
+
+  private int langId;
+
   public DegreesAndCredentialsCategoryEntity() {}
 
   public int getId() {
@@ -28,5 +32,21 @@ public class DegreesAndCredentialsCategoryEntity {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getCategoryKey() {
+    return categoryKey;
+  }
+
+  public void setCategoryKey(String categoryKey) {
+    this.categoryKey = categoryKey;
+  }
+
+  public int getLangId() {
+    return langId;
+  }
+
+  public void setLangId(int langId) {
+    this.langId = langId;
   }
 }

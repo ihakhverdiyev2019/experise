@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="common_header(title)">
-    <head xmlns:th="http://www.thymeleaf.org">
+    <head xmlns:th="http://www.thymeleaf.org" th:fragment="common_header(seo)">
         <meta charset="UTF-8">
-        <title th:text="${title}"></title>
+        <title th:text="${seo.title}"></title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <meta name="description" content="Edubit is a Educational Html5 Template. It created for professionals.Bootstrap 4 Exclusive Features made it unique and extremely useful for any professionals users. Edubit is fully responsive and supported in to all device & browsers.">
-        <meta name="keywords" content="CSE, BUSINESS, STUDY, REMIP, SERTE, QUIAXMS, LOREMIPSE, ESRITE">
-        <meta name="author" content="bitspeck">
+        <meta name="description" th:attr="content=${seo.description}">
+        <meta name="keywords" th:attr="content=${seo.key}">
+        <meta name="author" content="Elixir LLC.">
 
 
         <!-- favicon -->
@@ -34,5 +31,3 @@
         <!-- responsive - css -->
         <link rel="stylesheet" href="/css/responsive.css">
     </head>
-</div>
-</html>

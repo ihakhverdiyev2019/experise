@@ -10,4 +10,8 @@ import az.elixir.experise.model.FAQEntity;
 @Repository
 public interface FAQRepository extends JpaRepository<FAQEntity, Integer> {
   List<FAQEntity> findAllByLangId(int langId);
+
+  FAQEntity findByLangIdAndReferId(int langId, int referID);
+
+  List<FAQEntity> findAllByReferId(int referId);
 }

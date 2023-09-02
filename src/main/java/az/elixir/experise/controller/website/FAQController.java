@@ -34,7 +34,7 @@ public class FAQController {
       } else {
         langCode = session.getAttribute("lang").toString();
       }
-
+      model.addAttribute("seo", faqService.seoDetails(langCode));
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));

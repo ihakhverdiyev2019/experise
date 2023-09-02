@@ -17,4 +17,8 @@ public interface DegreesAndCredentialsRepository
   List<DegreesAndCredentialsEntity> findAllByLangId(int langId);
 
   List<DegreesAndCredentialsEntity> findAllByLangIdAndIsFooter(int langId, boolean isFooter);
+
+  DegreesAndCredentialsEntity findByLangIdAndReferId(int langId, int referID);
+
+  List<DegreesAndCredentialsEntity> findAllByReferId(int referId);
 }

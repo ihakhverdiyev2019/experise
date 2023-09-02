@@ -2,11 +2,20 @@ package az.elixir.experise.controller.website;
 
 import javax.servlet.http.HttpSession;
 
+<<<<<<< Updated upstream
+=======
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+>>>>>>> Stashed changes
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+<<<<<<< Updated upstream
+=======
+import az.elixir.experise.dto.website.SeoDto;
+>>>>>>> Stashed changes
 import az.elixir.experise.service.website.*;
 
 @Controller
@@ -31,6 +40,8 @@ public class HomePageController {
   @Autowired private BannerService bannerService;
   @Autowired private PlaceEntityService place;
 
+  private static final Logger logger = LogManager.getLogger(HomePageController.class);
+
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String homePage(Model model, HttpSession session) {
     String langCode = null;
@@ -41,7 +52,6 @@ public class HomePageController {
       } else {
         langCode = session.getAttribute("lang").toString();
       }
-
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));
@@ -51,12 +61,14 @@ public class HomePageController {
       model.addAttribute("banner", bannerService.findAll(langCode));
       model.addAttribute("service", service.findServicesByLanguage(langCode));
       model.addAttribute("footer", footerService.find(langCode));
+      model.addAttribute("seo", new SeoDto());
 
       model.addAttribute("partner", partnerService.findAll());
       model.addAttribute("place", place.findAllPlaces());
       model.addAttribute("title", "Home");
 
     } catch (Exception exception) {
+      logger.error("HomePageController Error: " + exception.getMessage());
       return "website/index.html";
     }
     return "website/index.html";

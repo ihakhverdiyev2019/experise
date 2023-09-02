@@ -12,4 +12,8 @@ public interface CoursesRepository extends JpaRepository<CoursesEntity, Integer>
   CoursesEntity findByIdAndLangId(int id, int langId);
 
   List<CoursesEntity> findAllByLangId(int langId);
+
+  CoursesEntity findByLangIdAndReferId(int langId, int referID);
+
+  List<CoursesEntity> findAllByReferId(int referId);
 }

@@ -13,4 +13,8 @@ public interface ResearchAndWritingsRepository
   ResearchAndWritingsEntity findByIdAndLangId(int id, int langId);
 
   List<ResearchAndWritingsEntity> findAllByLangId(int langId);
+
+  ResearchAndWritingsEntity findByLangIdAndReferId(int langId, int referID);
+
+  List<ResearchAndWritingsEntity> findAllByReferId(int referId);
 }

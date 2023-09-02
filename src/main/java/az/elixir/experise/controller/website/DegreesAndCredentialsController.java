@@ -45,6 +45,7 @@ public class DegreesAndCredentialsController {
           degreesAndCredentialsService.findAllByCategory("preparatory", langCode);
 
       model.addAttribute("degreesFooter", degreesAndCredentialsService.isFooter(langCode));
+      model.addAttribute("seo", degreesAndCredentialsService.seoDetails(langCode));
 
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
@@ -76,6 +77,7 @@ public class DegreesAndCredentialsController {
       }
       DegreesAndCredentialsView degreeDetails =
           degreesAndCredentialsService.findById(Integer.parseInt(id), langCode);
+      model.addAttribute("seo", degreesAndCredentialsService.seoDetails(langCode));
 
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));

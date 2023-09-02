@@ -12,4 +12,8 @@ public interface BlogCategoryRepository extends JpaRepository<BlogCategoryEntity
   List<BlogCategoryEntity> findAllByLangId(int langId);
 
   BlogCategoryEntity findByIdAndLangId(int id, int langId);
+
+  BlogCategoryEntity findByLangIdAndReferId(int langId, int referID);
+
+  List<BlogCategoryEntity> findAllByReferId(int referId);
 }

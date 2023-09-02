@@ -37,6 +37,7 @@ public class ResearchAndWritingsController {
       ResearchAndWritingsView result =
           researchAndWritingsService.findById(Integer.parseInt(id), langCode);
 
+      model.addAttribute("seo", researchAndWritingsService.seoDetails(langCode));
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));

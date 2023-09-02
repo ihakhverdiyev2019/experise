@@ -35,7 +35,7 @@ public class ScholarshipController {
         langCode = session.getAttribute("lang").toString();
       }
       ScholarshipView result = scholarshipService.findById(Integer.parseInt(id), langCode);
-
+      model.addAttribute("seo", scholarshipService.seoDetails(langCode));
       model.addAttribute("degrees", degreesAndCredentialsService.findAll(langCode));
       model.addAttribute("scholar", scholarshipService.findAll(langCode));
       model.addAttribute("courses", coursesService.findAll(langCode));

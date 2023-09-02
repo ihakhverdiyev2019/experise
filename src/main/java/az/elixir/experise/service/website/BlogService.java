@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import az.elixir.experise.dto.website.AllBlogsView;
 import az.elixir.experise.dto.website.BlogView;
+import az.elixir.experise.dto.website.SeoDto;
 import az.elixir.experise.model.BlogCategoryEntity;
 import az.elixir.experise.model.BlogEntity;
 import az.elixir.experise.model.LanguageEntity;
@@ -119,5 +120,22 @@ public class BlogService {
     BlogView blogView = new BlogView();
     blogView.mapper(blogEntity);
     return blogView;
+  }
+
+  public SeoDto seoDetails(String langCode) {
+    LanguageEntity getLanguageByLangCode =
+        languageRepository.findByLangCodeAndIsEnable(langCode, true);
+    //    FAQSeoEntity faqSeoEntity = faqSeoRepository.findByLangId(getLanguageByLangCode.getId());
+    SeoDto seoDto = new SeoDto();
+    if (false) {
+      //      seoDto.setTitle(faqSeoEntity.getTitle());
+      //      seoDto.setKey(faqSeoEntity.getKey());
+      //      seoDto.setDescription(faqSeoEntity.getDescription());
+    } else {
+      seoDto.setTitle("Elixir LLC.");
+      seoDto.setKey("Elixir LLC.");
+      seoDto.setDescription("Elixir LLC.");
+    }
+    return seoDto;
   }
 }

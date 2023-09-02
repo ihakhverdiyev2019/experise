@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import az.elixir.experise.model.AboutEntity;
 
 @Repository
-public interface AboutRepository extends JpaRepository<AboutEntity, Integer> {}
+public interface AboutRepository extends JpaRepository<AboutEntity, Integer> {
+  AboutEntity findByLangId(int landId);
+}
