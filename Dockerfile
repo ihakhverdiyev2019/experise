@@ -5,8 +5,10 @@
 # For Java 11, try this
 FROM openjdk:11
 
-WORKDIR /experise
+WORKDIR /app
 COPY . .
+EXPOSE 8081
+
 RUN mvn clean install
 
 CMD mvn spring-boot:run
