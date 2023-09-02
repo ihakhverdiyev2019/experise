@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import az.elixir.experise.service.website.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import az.elixir.experise.dto.website.AllBlogsView;
 import az.elixir.experise.dto.website.BlogView;
 import az.elixir.experise.model.BlogCategoryEntity;
+import az.elixir.experise.service.website.*;
 
 @Controller
 public class BlogController {

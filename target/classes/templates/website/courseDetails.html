@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments/head :: common_header(title=${title})"></head>
+<body>
+    
+    <!-- prelodear start -->
+    <div id="preloader"></div>
+    <!-- prelodear end --> 
+
+    <!-- header start -->
+    <header class="header-section sticky-header clearfix">
+        <!-- top header end-->
+        <div class="menu-sticky">
+            <div class="container">
+                <nav th:insert="fragments/navigation :: values(degrees=${degrees},scholar=${scholar},courses=${courses},academic=${academic})"></nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- header end -->
+
+    <section id="page-breadcrumb">
+        <div class="common-overlay"></div>
+            <div class="breadcrumb-menu">
+                <h3 th:text="${result.name}">Title</h3>
+                <ul class="steps breadcrumb d-flex">
+                    <li class="">
+                    <a th:href="@{/}">
+                        Home 
+                    </a>
+                    </li>
+                    <li>
+                        <svg width="26" height="44" viewBox="0 0 26 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.1478 20.2831L5.56721 0.702921C5.11433 0.249689 4.50979 0 3.86517 0C3.22056 0 2.61601 0.249689 2.16314 0.702921L0.721165 2.14454C-0.217136 3.08391 -0.217136 4.61066 0.721165 5.54861L17.1634 21.9909L0.702921 38.4514C0.250047 38.9046 0 39.5088 0 40.1531C0 40.798 0.250047 41.4022 0.702921 41.8558L2.14489 43.2971C2.59813 43.7503 3.20232 44 3.84693 44C4.49154 44 5.09609 43.7503 5.54896 43.2971L25.1478 23.699C25.6017 23.2443 25.851 22.6373 25.8496 21.992C25.851 21.3441 25.6017 20.7374 25.1478 20.2831Z" fill="black"/>
+                        </svg>    
+                    </li>
+                    <li class="active">
+                    <a>
+                        Courses
+                    </a>
+                    </li>
+                    <li>
+                        <svg width="26" height="44" viewBox="0 0 26 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.1478 20.2831L5.56721 0.702921C5.11433 0.249689 4.50979 0 3.86517 0C3.22056 0 2.61601 0.249689 2.16314 0.702921L0.721165 2.14454C-0.217136 3.08391 -0.217136 4.61066 0.721165 5.54861L17.1634 21.9909L0.702921 38.4514C0.250047 38.9046 0 39.5088 0 40.1531C0 40.798 0.250047 41.4022 0.702921 41.8558L2.14489 43.2971C2.59813 43.7503 3.20232 44 3.84693 44C4.49154 44 5.09609 43.7503 5.54896 43.2971L25.1478 23.699C25.6017 23.2443 25.851 22.6373 25.8496 21.992C25.851 21.3441 25.6017 20.7374 25.1478 20.2831Z" fill="black"/>
+                        </svg>
+                    </li>
+                    <li class="active">
+                        <a>
+                            <span th:text="${result.name}">
+
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </section>
+
+<!-- ///page-breadcrumb//// -->
+
+
+<!-- Blog details -->
+<section>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12 mt-12">
+                <div class="courses_details-2">
+                    <img th:src="${result.photoUrl}" alt="course-details-image">
+                    <div class="span_item">
+                    <p th:utext="${result.text}" >Lorem ipsum dolor sit amet consectetur adipisicing, elit. Vel ab, recusandae repellat aliquam esse temporibus tempora maxime nisi consequatur, dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- blog details - end -->
+
+    <footer th:insert="fragments/footer :: values(degrees=${degreesFooter}, footer=${footer})"></footer>
+
+
+
+  </body>      
+</html>

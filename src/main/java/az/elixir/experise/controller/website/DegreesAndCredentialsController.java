@@ -4,15 +4,16 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import az.elixir.experise.dto.website.AllDegreesAndCredentialsView;
-import az.elixir.experise.dto.website.DegreesAndCredentialsView;
-import az.elixir.experise.service.website.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import az.elixir.experise.dto.website.AllDegreesAndCredentialsView;
+import az.elixir.experise.dto.website.DegreesAndCredentialsView;
+import az.elixir.experise.service.website.*;
 
 @Controller
 public class DegreesAndCredentialsController {

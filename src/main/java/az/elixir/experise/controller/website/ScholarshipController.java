@@ -2,7 +2,6 @@ package az.elixir.experise.controller.website;
 
 import javax.servlet.http.HttpSession;
 
-import az.elixir.experise.service.website.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import az.elixir.experise.dto.website.ScholarshipView;
+import az.elixir.experise.service.website.*;
 
 @Controller
 public class ScholarshipController {

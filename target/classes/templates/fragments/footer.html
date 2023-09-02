@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="values(degrees, footer)">
+    <!-- Footer Section -->
+    <footer>
+        <section id="footer-top-section">
+            <div class="overlay-footer"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-col wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                        <div class="footer-about">
+                            <img th:src="${footer.footerLogo}" alt="footer-image">
+                            <p class="mb-4" th:text="${footer.briefInfo}">Lorem of the main advantages of Mastestudy is a simple interface. Everything is created for users’ convenience.</p>
+                            <h5> Follow Us</h5>
+                            <ul class="d-flex">
+                                <li class="facebook mr-4" th:if="${footer.facebook != null}">
+                                    <a th:href="${footer.facebook}"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li class="linkedin mr-4" th:if="${footer.linkedin != null}">
+                                    <a th:href="${footer.linkedin}"><i class="fa fa-linkedin-square"></i></a>
+                                </li>
+                                <li class="instagram mr-4" th:if="${footer.instagram != null}">
+                                    <a th:href="${footer.instagram}"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li class="twitter mr-4" th:if="${footer.twitter != null}">
+                                    <a th:href="${footer.twitter}"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li class="youtube mr-4" th:if="${footer.youtube != null}">
+                                    <a th:href="${footer.youtube}"><i class="fa fa-youtube"></i></a>
+                                </li>
+                                <li class="whatsapp mr-4" th:if="${footer.whatsapp != null}">
+                                    <a th:href="${footer.whatsapp}"><i class="fa fa-whatsapp"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-col">
+                        <div class="footer-service wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                            <h3 class="footer-text ">About US</h3>
+                            <ul>
+                                <li><a th:href="@{'/about-us'}">About ExpeRise</a></li>
+                                <li><a href="service.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-col">
+                        <div class="footer-service wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                            <h3 class="footer-text ">Degrees</h3>
+                            <ul>
+                                <li th:each="d : ${degrees}" ><a th:href="@{'/degrees-and-credentials-details/' + ${d.id}}">[(${d.name})]</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-col wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                        <div class="footer-contact">
+                            <h3 class="footer-text ">Head Quarter</h3>
+                            <p th:text="${footer.address}">Discover St, New York, NY 10012, USA</p>
+                            <ul>
+                                <li><i class="fa fa-phone mr-2"></i> [(${footer.phoneNumber})]</li>
+                                <li><i class="fa fa-envelope-o mr-2"></i> [(${footer.email})]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer-bottom">
+            <div class="footer-bottom-text text-center">
+                <p class="mb-0">©2022 All Right Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section - end -->
+
+    <!-- jquery-3.5.0.min - js -->
+    <script src="/js/jquery-3.5.0.min.js"></script>
+    <!-- bootstrap.min - js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- fontawesome.min.js -->
+    <script src="/js/fontawesome.min.js"></script>
+    <!-- popper.min - js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- owl.carousel.min - js -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- wow.min - js -->
+    <script src="/js/wow.min.js"></script>
+    <!--slick js  -->
+    <script src="/js/slick.js"></script>
+    <!-- main - js -->
+    <script src="/js/main.js"></script>
+</div>
+</html>
