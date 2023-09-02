@@ -1,14 +1,10 @@
+FROM maven:3.8.5-openjdk-11 as build
+WORKDIR /build
+COPY . .
+RUN mvn clean package -DskipTests
 
-# For Java 8, try this
-# FROM openjdk:8-jdk-alpine
 
-# For Java 11, try this
-FROM maven:3.8.6-openjdk-11
-
-EXPOSE 8081
-
-RUN mvn clean
-
-RUN mvn install
-
-CMD mvn spring-boot:run
+FROM openjdk:11
+WORKDIR /app
+COPY --from=build ./build/target/*.jar ./experise-.jar
+ENTRYPOINT java -jar experise-.jar
