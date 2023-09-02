@@ -18,7 +18,7 @@ public class TestController {
     private SaveImage saveImage;
 
     @RequestMapping(value = "/test-file", method = RequestMethod.POST)
-    public String doAddScholarship(
+    public String testFile(
             @RequestParam("image") MultipartFile file) {
        saveImage.savePhoto("a", file);
         return "DONE";
