@@ -22,7 +22,9 @@ public class SaveImage {
       Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY + path, file.getOriginalFilename());
       System.out.println(fileNameAndPath.getFileName());
       fileNames.append(file.getOriginalFilename());
-      Files.write(fileNameAndPath, file.getBytes());
+      Path a = Files.write(fileNameAndPath, file.getBytes());
+      System.out.println("Path: " + a.toString());
+      System.out.println("Path File Name: " + a.getFileName());
       return true;
     } catch (IOException e) {
       System.out.println("Message: " + e.getMessage());
