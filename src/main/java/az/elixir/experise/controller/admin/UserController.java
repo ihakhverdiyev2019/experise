@@ -1,12 +1,10 @@
 package az.elixir.experise.controller.admin;
 
-<<<<<<< Updated upstream
+import az.elixir.experise.dto.admin.UserLoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-=======
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import az.elixir.experise.dto.admin.Payload;
-import az.elixir.experise.dto.admin.UserLoginRequest;
->>>>>>> Stashed changes
 import az.elixir.experise.service.admin.UserService;
 
 @Controller
 public class UserController {
 
   @Autowired private UserService userService;
-<<<<<<< Updated upstream
-
-  @RequestMapping(value = "/admin-elixir", method = RequestMethod.GET)
-  public String adminDashboard() {
-    return "admin/auth-login.html";
-=======
 
   @RequestMapping(value = "/admin-elixir", method = RequestMethod.GET)
   public String adminlogin() {
@@ -63,6 +53,5 @@ public class UserController {
     } catch (Exception e) {
       return "";
     }
->>>>>>> Stashed changes
   }
 }

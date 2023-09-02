@@ -81,8 +81,6 @@ public class UserEntity {
   public void setCreatedAt(Instant createdAt) {
     this.createdAt = createdAt;
   }
-<<<<<<< Updated upstream
-=======
 
   @Override
   public String toString() {
@@ -108,5 +106,4 @@ public class UserEntity {
         + createdAt
         + '}';
   }
->>>>>>> Stashed changes
 }

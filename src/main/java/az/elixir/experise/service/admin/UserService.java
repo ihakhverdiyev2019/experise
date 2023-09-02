@@ -3,10 +3,7 @@ package az.elixir.experise.service.admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< Updated upstream
-=======
 import az.elixir.experise.dto.admin.Payload;
->>>>>>> Stashed changes
 import az.elixir.experise.dto.admin.UserLoginRequest;
 import az.elixir.experise.model.UserEntity;
 import az.elixir.experise.repository.UserRepository;
@@ -15,13 +12,6 @@ import az.elixir.experise.repository.UserRepository;
 public class UserService {
 
   @Autowired private UserRepository userRepository;
-<<<<<<< Updated upstream
-
-  private boolean login(UserLoginRequest userLoginRequest) {
-    UserEntity userEntity =
-        userRepository.findByUsernameAndPassword(
-            userLoginRequest.getUsername(), userLoginRequest.getPassword());
-=======
 
   public Payload login(UserLoginRequest userLoginRequest) {
     Payload payload = new Payload();
@@ -38,7 +28,6 @@ public class UserService {
   public boolean checkUser(UserEntity user) {
     UserEntity userEntity =
         userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
->>>>>>> Stashed changes
     if (userEntity != null) {
       return true;
     }
