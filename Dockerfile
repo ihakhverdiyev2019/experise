@@ -17,7 +17,7 @@ ENTRYPOINT [java
            -Dotel.metrics.exporter=none \
            -Dotel.traces.exporter=otlp \
            -Dotel.resource.attributes=service.name=experise-app \
-           -Dotel.exporter.otlp.traces.endpoint=http://http://38.242.150.128:4317 \
+           -Dotel.exporter.otlp.traces.endpoint=http://38.242.150.128:4317 \
            -Dotel.service.name=experise-app \
            -Dotel.javaagent.debug=false \
            -javaagent:../agents/opentelemetry-javaagent.jar"
