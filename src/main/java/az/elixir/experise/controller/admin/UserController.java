@@ -1,10 +1,5 @@
 package az.elixir.experise.controller.admin;
 
-import az.elixir.experise.dto.admin.UserLoginRequest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import az.elixir.experise.dto.admin.Payload;
+import az.elixir.experise.dto.admin.UserLoginRequest;
 import az.elixir.experise.service.admin.UserService;
 
 @Controller
