@@ -2,7 +2,9 @@ version: '3'
 
 services:
   app:
-    build: ./experise
+    build:
+      context: ./experise
+      dockerfile: Dockerfile
     restart: on-failure
     ports:
       - "8081:8081"
