@@ -55,7 +55,7 @@ public class HomePageController {
       model.addAttribute("banner", bannerService.findAll(langCode));
       model.addAttribute("service", service.findServicesByLanguage(langCode));
       model.addAttribute("footer", footerService.find(langCode));
-      model.addAttribute("seo", new SeoDto());
+      model.addAttribute("seo", new SeoDto("test","345","test"));
 
       model.addAttribute("partner", partnerService.findAll());
       model.addAttribute("place", place.findAllPlaces());

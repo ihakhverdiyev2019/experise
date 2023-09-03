@@ -10,6 +10,12 @@ public class SeoDto {
 
   public SeoDto() {}
 
+  public SeoDto(String title, String key, String description) {
+    this.title = title;
+    this.key = key;
+    this.description = description;
+  }
+
   public String getTitle() {
     return title;
   }
